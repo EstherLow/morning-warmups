@@ -9,17 +9,16 @@ Allow the string to include negative values e.g. '12-23' returns '4'
 
 
 function addString (stringNum) {
-var numArray = stringNum.split('')
+var numArray = stringNum.toString().match(/-?\d/g);
 console.log(numArray);
-//var subtotal = 0
+var subtotal = 0
 
-//for (var i = 0; i < numArray.length; i++) {
+for (var i = 0; i < numArray.length; i++) {
   //console.log(numArray[i]);
-
- //  numArray[i] = parseInt(numArray[i], 10)
- //  subtotal += numArray[i];
- // }
-  //console.log(subtotal);
+  numArray[i] = parseInt(numArray[i], 10)
+  subtotal += numArray[i];
+  }
+  console.log(subtotal);
 }
 
 addString('12-34')
