@@ -46,11 +46,19 @@ function calculateWords(stringMath) {
 var newArray = stringMath.match(/\w+-?\w+/gi)
 console.log(newArray);
 var op = operators[newArray[1]]
-console.log(op);
+//console.log(op);
 var sumTotal = op (numerals[newArray[0]], numerals[newArray[2]]);
-console.log(sumTotal);
+//console.log(sumTotal);
+for (var i in numerals) {
+  if (numerals[i] == sumTotal) {
+    console.log(i);
+      }
+}
 
 }
 
 
-calculateWords("five times two")
+
+
+
+calculateWords("three minus three")
